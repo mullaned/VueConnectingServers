@@ -30,12 +30,13 @@
                     username: '',
                     email: ''
                 },
-                users: []
+                users: [],
+                resource: {}
             };
         },
         methods: {
             submit() {
-                this.$http.post('', this.user)
+                this.$http.post('data.json', this.user)
                 .then(response => {
                     console.log(response)
                 }, error => {
@@ -57,6 +58,9 @@
                     this.users = resultArray;
                 });
             }
+        },
+        created() {
+            this.resource = this.$resource('data.json');
         }
     }
 </script>
