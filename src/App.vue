@@ -35,7 +35,7 @@
         },
         methods: {
             submit() {
-                this.$http.post('https://vuetest-74fa8.firebaseio.com/data.json', this.user)
+                this.$http.post('', this.user)
                 .then(response => {
                     console.log(response)
                 }, error => {
